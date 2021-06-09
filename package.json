@@ -1,0 +1,20 @@
+{
+  "name": "202106-webpack",
+  "version": "1.0.0",
+  "description": "webpack getting started",
+  "private": true,
+  "scripts": {
+    "start": "webpack --mode development",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "baedorazy <baedorazy@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
