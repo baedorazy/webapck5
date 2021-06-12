@@ -4,8 +4,8 @@
   "description": "webpack getting started",
   "private": true,
   "scripts": {
-    "start": "webpack --mode development",
     "watch": "webpack --watch",
+    "start": "webpack serve --open",
     "build": "webpack"
   },
   "keywords": [],
@@ -16,7 +16,8 @@
     "html-webpack-plugin": "^5.3.1",
     "style-loader": "^2.0.0",
     "webpack": "^5.38.1",
-    "webpack-cli": "^4.7.2"
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "lodash": "^4.17.21"
