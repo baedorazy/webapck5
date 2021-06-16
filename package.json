@@ -6,8 +6,9 @@
   "scripts": {
     "watch": "webpack --watch",
     "start": "webpack serve --open",
+    "master": "webpack --config webpack.config.prod.js",
     "server": "node server.js",
-    "build": "webpack"
+    "build": "rm ./public/*.*; npx webpack"
   },
   "keywords": [],
   "author": "baedorazy <baedorazy@gmail.com>",
