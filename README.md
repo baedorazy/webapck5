@@ -46,26 +46,38 @@ package.json
 #webpack.config.js 
 
 module.exports = {
-  mode: 'development',
-  entry: {
-  	index: './source/index.js', // 각기 필요한 js import추가
-	about: './source/about.js' // 각기 팔요한 js import추가
-  },
-  output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: '[name]_bundle.js'
-  },
+    mode: 'development',
+    entry: {
+        index: './source/index.js',
+        about: './source/about.js'
+    },
+    output: {
+        path: path.resolve(__dirname, 'public'),
+        filename: '[name]_bundle.js'
+    },
 	module: {
-  	rules: [
-			{
-				test: /\.css$/,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
-			}
-		]
-	}
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: './source/index.html',
+			filename: './index.html',
+			chunks: ['index']
+		}),
+		new HtmlWebpackPlugin({
+			template: './source/about.html',
+			filename: './about.html',
+			chunks: ['about']
+		})
+	]
 };
 
 /public/index_bindle.js
@@ -75,3 +87,17 @@ module.exports = {
 ## plugin 설정
 - n개 파일 n개 템플릿 사용하고 각기 다른 js 넣는 방법
 - https://github.com/jantimon/html-webpack-plugin 
+~~~
+plugins: [
+		new HtmlWebpackPlugin({
+			template: './source/index.html',
+			filename: './index.html',
+			chunks: ['index']
+		}),
+		new HtmlWebpackPlugin({
+			template: './source/about.html',
+			filename: './about.html',
+			chunks: ['about']
+		})
+	]
+~~~
