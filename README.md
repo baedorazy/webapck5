@@ -1,21 +1,27 @@
 # webpack5 getting started
 
+## dependency
+- express
+- webpack, webpack-cli
+- babel, @babel/polyfill
+
+
 ## install webpack
 - 참고링크: https://webpack.js.org/guides/getting-started/
 ```
 $ npm install webpack webpack-cli —save-dev 
 ```
 
-## basic commend(설정파일 없어도 가능)
+## basic command(설정파일 없어도 가능)
 ``` 
 $ npx webpack --entry ./source/index.js --output-path ./public
 ```
 ```
 이렇게 돌리면 번들링 파일은 public아래에 나올꺼야.
-그리고 추가로 mode option 설정 하라고 메시지 출력됨.
+그리고 추가로 mode option 설정 하라고 메시지 출력되는데,
+이유는 mode가 develop일때와 production일 때 번들링 결과가 달라서야.
 webapck.config.js 만들어서 돌릴때 마다 mode다르게 넣어서 돌려도 되고,
 아래 처럼 다른 파일로 설정도 가능
-참고로 mode가 develop일때와 production일 때 번들링 결과가 다름.
 ```
 
 ## mode setting
@@ -23,6 +29,8 @@ webapck.config.js 만들어서 돌릴때 마다 mode다르게 넣어서 돌려�
 ```
 $ touch webapck.config.js // mode = 'develop'
 $ touch webapck.config.prod.js  // mode = 'production'
+
+아니면 .env 프로세스 띄울때 값넣고 그 걸 config에서 받아서 모드 설정해줘도됨.
 ```
 
 develop, production 설정방법은 다양하지만 편하게 하고 싶으면 package.json script 추가
